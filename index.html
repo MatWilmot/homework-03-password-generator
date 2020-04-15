@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <header>
+      <h1>Generate a new password!</h1>
+    </header>
+    <main>
+      <h2>First, select the criteria for your password:</h2>
+      <form action="#" id="charTypeForm">
+        <input type="checkbox" id="lowercase" />
+        <label for="lowercase">Lower-case letters</label>
+        <br />
+        <input type="checkbox" id="uppercase" />
+        <label for="uppercase">Upper-case letters</label>
+        <br />
+        <input type="checkbox" id="numbers" />
+        <label for="numbers">Numbers</label>
+        <br />
+        <input type="checkbox" id="special-characters" />
+        <label for="special-characters">Special characters</label>
+        <br /><br />
+        <input type="submit" id="submit" value="Generate Password" />
+      </form>
+      <h3>Your Password Is...</h3>
+      <h1 id="password"></h1>
+    </main>
+  </body>
+</html>
