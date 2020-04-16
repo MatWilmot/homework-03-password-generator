@@ -90,3 +90,19 @@ var specialCharacters = [
 // if specialCharacters is true, then add special characters
 // get password-length
 // generate a password using random included character types, until password is the correct length
+
+// access and print a random lower character
+var randLC = Math.round(Math.random() * lowerCase.length);
+console.log(lowerCase[randLC]);
+
+// access and print a random upper character
+var randUC = Math.round(Math.random() * upperCase.length);
+console.log(upperCase[randUC]);
+
+// access and print a random number
+var randNum = Math.round(Math.random() * numbers.length);
+console.log(numbers[randNum]);
+
+// access and print a random special character
+var randSC = Math.round(Math.random() * specialCharacters.length);
+console.log(specialCharacters[randSC]);
