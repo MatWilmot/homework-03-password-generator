@@ -1,3 +1,4 @@
+// create arrays that contain the characters for the password
 var lowerCase = [
   "a",
   "b",
@@ -83,22 +84,52 @@ var specialCharacters = [
 // create an html form to collect information about password content
 // see index.html
 // collect that true/false from each checkbox and make it a variable
-var wantsLowercase = document.getElementById("lowercase").checked;
-var wantsUppercase = document.getElementById("uppercase").checked;
-var wantsNumbers = document.getElementById("numbers").checked;
-var wantsSpecial = document.getElementById("special-characters").checked;
 
-console.log("lower", wantsLowercase);
-console.log("upper", wantsUppercase);
-console.log("number", wantsNumbers);
-console.log("special", wantsSpecial);
+var pwdContent = "";
 
-// create arrays that contain the characters for the password
+// get password-length, this should be inside the event listener for clicking the submit button
+document.getElementById("submit").addEventListener("click", function (e) {
+  e.preventDefault();
+  var wantsLowercase = document.getElementById("lowercase").checked;
+  var wantsUppercase = document.getElementById("uppercase").checked;
+  var wantsNumbers = document.getElementById("numbers").checked;
+  var wantsSpecial = document.getElementById("special-characters").checked;
+  var pwdLength = document.getElementById("password-length").value;
+  if (pwdLength < 8 || pwdLength > 128) {
+    console.log(pwdLength);
+    alert("Password length not acceptable. Please choose between 8 and 128.");
+  }
+  if (
+    wantsLowercase === false &&
+    wantsUppercase === false &&
+    wantsNumbers === false &&
+    wantsSpecial === false
+  ) {
+    alert("Password must contain at least one type of character");
+  }
+
+  if (wantsUppercase === true) {
+    pwdContent += lowerCase;
+  }
+  if (wantsUppercase === true) {
+    pwdContent += upperCase;
+  }
+  if (wantsNumbers === true) {
+    pwdContent += numbers;
+  }
+  if (wantsSpecial === true) {
+    pwdContent += specialCharacters;
+  }
+  console.log(pwdContent);
+
+  return pwdContent;
+});
+
 // if uppercase is true, then add uppercase letters
 // if lowercase is true, then add lowercase letters
 // if numbers is true, then add numbers
 // if specialCharacters is true, then add special characters
-// get password-length
+// if the user selected no inputs, give an error
 // generate a password using random included character types, until password is the correct length
 
 // access and print a random lower character
