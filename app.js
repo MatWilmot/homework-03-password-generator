@@ -82,6 +82,16 @@ var specialCharacters = [
 
 // create an html form to collect information about password content
 // see index.html
+// collect that true/false from each checkbox and make it a variable
+var wantsLowercase = document.getElementById("lowercase").checked;
+var wantsUppercase = document.getElementById("uppercase").checked;
+var wantsNumbers = document.getElementById("numbers").checked;
+var wantsSpecial = document.getElementById("special-characters").checked;
+
+console.log("lower", wantsLowercase);
+console.log("upper", wantsUppercase);
+console.log("number", wantsNumbers);
+console.log("special", wantsSpecial);
 
 // create arrays that contain the characters for the password
 // if uppercase is true, then add uppercase letters
@@ -97,7 +107,7 @@ console.log(lowerCase[randLC]);
 
 // access and print a random upper character
 var randUC = Math.round(Math.random() * upperCase.length);
-console.log(upperCase[randUC]);
+console.log(lowerCase[randLC]);
 
 // access and print a random number
 var randNum = Math.round(Math.random() * numbers.length);
