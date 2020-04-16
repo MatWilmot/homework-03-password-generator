@@ -8,8 +8,6 @@ var specialCharacters = ["!@#$%^&*()_+-=?><;"];
 // see index.html
 // collect that true/false from each checkbox and make it a variable
 
-var pwdContent = "";
-
 // everything happens when the submit button is clicked
 document.getElementById("submit").addEventListener("click", function (e) {
   e.preventDefault();
@@ -18,6 +16,7 @@ document.getElementById("submit").addEventListener("click", function (e) {
   var wantsNumbers = document.getElementById("numbers").checked;
   var wantsSpecial = document.getElementById("special-characters").checked;
   var pwdLength = document.getElementById("password-length").value;
+  var pwdContent = "";
 
   if (pwdLength < 8 || pwdLength > 128) {
     console.log(pwdLength);
@@ -30,7 +29,7 @@ document.getElementById("submit").addEventListener("click", function (e) {
   ) {
     alert("Password must contain at least one type of character");
   } else {
-    if (wantsUppercase === true) {
+    if (wantsLowercase === true) {
       pwdContent += lowerCase;
     }
     if (wantsUppercase === true) {
@@ -46,13 +45,13 @@ document.getElementById("submit").addEventListener("click", function (e) {
     // use a for loop to pick a random character from pwdContent for pwdLength number of times
     var newPassword = "";
     for (var i = 0; i < pwdLength; i++) {
-      var randPwdChar = Math.round(Math.random() * pwdContent.length);
+      var randPwdChar = Math.floor(Math.random() * pwdContent.length);
       newPassword += pwdContent[randPwdChar];
       console.log(pwdContent[randPwdChar]);
-    }
+    } // end of for loop
     console.log(newPassword);
-  }
-});
+  } // end of else
+}); // end of event listener
 
 // if uppercase is true, then add uppercase letters
 // if lowercase is true, then add lowercase letters
