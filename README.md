@@ -22,3 +22,11 @@ THEN a password is generated that matches the selected criteria
 
 WHEN the password is generated  
 THEN the password is either displayed in an alert or written to the page
+
+# How It Works
+
+1. Use the 4 checkboxes to decide what creiteria should be included in your password
+
+2. Type a number between 8 and 128 in the "Password Length" field
+
+3. Click submit to generate your new password!
